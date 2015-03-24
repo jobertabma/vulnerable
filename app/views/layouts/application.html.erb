@@ -8,7 +8,29 @@
 </head>
 <body>
 
-<%= yield %>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to 'Vulnerable', root_path, class: 'navbar-brand' %>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+          <li><%= link_to 'Edit profile', edit_user_path(current_user) %></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Sign up', new_user_registration_path %></li>
+          <li><%= link_to 'Sign in', new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

@@ -7,10 +7,6 @@
     <% else %>
       I'm really sad. You don't have a name just yet. Please update your profile!
     <% end %>
-    <%= link_to 'Edit profile', edit_user_path(current_user) %>
-    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
   <% end %>
 <% else %>
-  <%= link_to 'Sign up', new_user_registration_path %>
-  <%= link_to 'Sign in', new_user_session_path %>
 <% end %>
