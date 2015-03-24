@@ -1,7 +1,14 @@
 <% if current_user %>
-  <h1>Welcome <%= current_user.email %></h1>
-  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
   <% cache @current_user do %>
+    <h1>Welcome <%= current_user.email %></h1>
+    <% if current_user.name.present? %>
+      I really like your name, <%= current_user.name %>.
+      <br />
+    <% else %>
+      I'm really sad. You don't have a name just yet. Please update your profile!
+    <% end %>
+    <%= link_to 'Edit profile', edit_user_path(current_user) %>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
   <% end %>
 <% else %>
   <%= link_to 'Sign up', new_user_registration_path %>

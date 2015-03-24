@@ -1,0 +1,10 @@
+<h1>Edit profile</h1>
+
+<%= form_for @user do |f| %>
+  Name: <br />
+  <%= f.text_field :name %>
+  <br />Bio: <br />
+  <%= f.text_area :bio %>
+  <br /><br />
+  <%= f.submit %>
+<% end %>
