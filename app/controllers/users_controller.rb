@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit :name, :bio
+    params.require(:user).permit :name, :bio, :website
   end
 
   def set_user
