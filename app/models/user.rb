@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   validates :website, allow_blank: true, format: { with: URI::regexp(%w(http https)) }
 
   has_attached_file :cv
+  do_not_validate_attachment_file_type :cv
 end
