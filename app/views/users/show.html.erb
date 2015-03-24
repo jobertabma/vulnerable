@@ -1,0 +1,10 @@
+<% if @user == current_user %>
+  <%= link_to 'Edit your profile', edit_user_path(@user) %>
+  <br /><br />
+<% end %>
+
+<% if @user.name.present? %>
+  Welcome, this is <%= @user.name %> its profile.
+<% else %>
+  This user hasn't provided a name yet, so there's not much to see here.
+<% end %>
