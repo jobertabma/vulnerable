@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :website, allow_blank: true, format: { with: URI::regexp(%w(http https)) }
+
+  has_attached_file :cv
 end
