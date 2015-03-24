@@ -1,6 +1,6 @@
 <% if current_user %>
   <% cache @current_user do %>
-    <h1>Welcome <%= current_user.email %></h1>
+    <h1>Welcome</h1>
     <% if current_user.name.present? %>
       I really like your name, <%= current_user.name %>.
       <br />
