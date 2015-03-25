@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
       cookies.permanent['layout'] = params['layout']
     end
 
-    @layout = cookies.permanent['layout']
+    @layout = cookies['layout']
   end
 end
