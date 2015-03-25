@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :set_layout
+  before_action :set_layout, :visit
+  include Countable
 
   private
 
@@ -9,5 +10,9 @@ class ApplicationController < ActionController::Base
     end
 
     @layout = cookies['layout']
+  end
+
+  def visit
+    register_visit(current_user) if current_user
   end
 end
