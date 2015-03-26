@@ -47,8 +47,4 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'will_paginate', '~> 3.0.6'
-gem 'ruby-progressbar'
-gem 'rubocop'
-gem 'brakeman'
 gem 'user_count', github: 'willianvdv/user_count'
