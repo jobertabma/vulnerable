@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
-  before_action :set_layout, :visit
   include Countable
+
+  before_action :set_layout, :visit
 
   private
 
