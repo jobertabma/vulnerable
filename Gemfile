@@ -47,3 +47,4 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'user_count', github: 'willianvdv/user_count'
